@@ -1,47 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>ruche</title>
-	<style>
-		/* Style pour le masque de fond */
-		.mask {
-			position: fixed;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			background-color: rgba(0, 0, 0, 0.8);
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			z-index: 9999;
-		}
-
-		/* Style pour l'animation de chargement */
-		.rotate {
-
-            border-radius: 50%;
-            width: 120px;
-            height: 120px;
-            animation: spin 2s linear infinite;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-		@keyframes spin {
-			0% { transform: rotate(0deg); }
-			100% { transform: rotate(360deg); }
-		}
-	</style>
-</head>
-<body>
-	<!-- Masque de fond -->
-	<div class="mask">
-		<!-- Animation de chargement -->
-		<img src="dodo.jpg" class="rotate">
-	</div>
 
 <!-- code page ruche -->
 <SCRIPT LANGUAGE="JavaScript"> 
@@ -445,14 +401,5 @@ if(document.getElementById) window.onload = mouvement;
 Ici page web qui dans mon cas est de parler de la vie des abeilles des ruches install&eacute;es dans les Batignolles.
 <br><br><br> 
 
-
-      <script>
-      // Supprime le masque de fond une fois que la page est chargée
-      window.addEventListener("load", function(){
-         var mask = document.querySelector(".mask");
-         mask.classList.add("hidden");
-         setTimeout(function(){ mask.remove(); }, 600);
-      });
-      </script>
 </body>
-</html>
+
