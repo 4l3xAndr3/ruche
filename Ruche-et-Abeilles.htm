@@ -1,0 +1,405 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<SCRIPT LANGUAGE="JavaScript"> 
+var Xpos = 2;
+var Ypos = 2;
+var FlagChoix = 0;
+var vara="DIV ID";
+var varb="/DIV";
+var m = 0 ;
+var n = 0 ;
+var Leader = 0;
+var styl='style="position:absolute;left:0px;top:0px;width:32px;height:32px;visibility:hidden;"'
+chaine='<'+vara+'="obj0" '+styl+'>'
++'<img src="Abeille2.gif" border=0 >'
++'<'+varb+'>'
++'<'+vara+'="obj15" '+styl+'>'
++'<img src="Fleur66.gif" border=0 >'
++'<'+varb+'>'
++'<'+vara+'="obj21" '+styl+'>'
++'<img src="Fleur32.gif" border=0 >'
++'<'+varb+'>'
++'<'+vara+'="obj16" '+styl+'>'
++'<img src="Fleurs168.gif" border=0 >'
++'<'+varb+'>'
++'<'+vara+'="obj17" '+styl+'>'
++'<img src="FleursJonquilles1.gif" border=0 >'
++'<'+varb+'>'
++'<'+vara+'="obj18" '+styl+'>'
++'<img src="Fleur35.gif" border=0 >'
++'<'+varb+'>'
++'<'+vara+'="obj19" '+styl+'>'
++'<img src="Fleur37.gif" border=0 >'
++'<'+varb+'>'
++'<'+vara+'="obj20" '+styl+'>'
++'<img src="Fleur31.gif" border=0 >'
++'<'+varb+'>'
++'<'+vara+'="obj14" '+styl+'>'
++'<img src="FleursRoses32.gif" border=0 >'
++'<'+varb+'>'
++'<'+vara+'="obj1" '+styl+'>'
++'<img src="Abeille2.gif" border=0 >'
++'<'+varb+'>'
++'<'+vara+'="obj2" '+styl+'>'
++'<img src="Abeille2.gif" border=0 >'
++'<'+varb+'>'
++'<'+vara+'="obj3" '+styl+'>'
++'<img src="Abeille2.gif" border=0 >'
++'<'+varb+'>'
++'<'+vara+'="obj4" '+styl+'>'
++'<img src="Abeille2.gif" border=0 >'
++'<'+varb+'>'
++'<'+vara+'="obj5" '+styl+'>'
++'<img src="Abeille2.gif" border=0 >'
++'<'+varb+'>'
++'<'+vara+'="obj6" '+styl+'>'
++'<img src="Abeille2.gif" border=0 >'
++'<'+varb+'>'
++'<'+vara+'="obj7" '+styl+'>'
++'<img src="Abeille1.gif" border=0 >'
++'<'+varb+'>'
++'<'+vara+'="obj8" '+styl+'>'
++'<img src="Abeille1.gif" border=0>'
++'<'+varb+'>'
++'<'+vara+'="obj9" '+styl+'>'
++'<img src="Abeille1.gif" border=0 >'
++'<'+varb+'>'
++'<'+vara+'="obj10" '+styl+'>'
++'<img src="Abeille1.gif" border=0 >'
++'<'+varb+'>'
++'<'+vara+'="obj11" '+styl+'>'
++'<img src="Abeille1.gif" border=0 >'
++'<'+varb+'>'
++'<'+vara+'="obj12" '+styl+'>'
++'<img src="Abeille1.gif" border=0 >'
++'<'+varb+'>'
++'<'+vara+'="obj13" '+styl+'>'
++'<img src="Ruche2.gif" border=0 >'
++'<'+varb+'>'
+
+document.write(chaine);
+var div0 = document.getElementById("obj0").style;
+var div1 = document.getElementById("obj1").style;
+var div2 = document.getElementById("obj2").style;
+var div3 = document.getElementById("obj3").style;
+var div4 = document.getElementById("obj4").style;
+var div5 = document.getElementById("obj5").style;
+var div6 = document.getElementById("obj6").style;
+var div7 = document.getElementById("obj7").style;
+var div8 = document.getElementById("obj8").style;
+var div9 = document.getElementById("obj9").style;
+var div10 = document.getElementById("obj10").style;
+var div11 = document.getElementById("obj11").style;
+var div12 = document.getElementById("obj12").style;
+var div13 = document.getElementById("obj13").style;
+var div14 = document.getElementById("obj14").style;
+var div15 = document.getElementById("obj15").style;
+var div16 = document.getElementById("obj16").style;
+var div17 = document.getElementById("obj17").style;
+var div18 = document.getElementById("obj18").style;
+var div19 = document.getElementById("obj19").style;
+var div20 = document.getElementById("obj20").style;
+var div21 = document.getElementById("obj21").style;
+var objet;var coordx;var coordy;
+objet = new Array(div0,div1,div2,div3,div4,div5,div6,div7,div8,div9,div10,div11,div12,div13,div14,div15,div16,div17,div18,div19,div20,div21);
+coordx = new Array(20,410,30,524,27,22,316,40,744,30,764,80,920,500,1,1,1,1,1,1,1,1);
+coordy = new Array(50,115,130,170,210,250,290,230,250,203,190,100,50,333,1,1,1,1,1,1,1,1);
+mouvx = new Array(7.2,10.1,12.2,11.2,15,14.2,16,-12.1,-14.2,-11.5,-8.2,-10.3,-13,0,0,0,0,0,0,0,0,0);
+mouvy = new Array(-1.2,2.1,-3.3,4,-2.7,4.1,-2.3,5.4,-3.6,2.6,-1.3,4.1,-3.4,0,0,0,0,0,0,0,0,0);
+var Xruche=1;
+var Yruche=1;
+var Liberte=-3;
+for (var i = 0; i < 22; i++) {
+   objet[i].visibility="visible";
+}
+function placeObj(i,px,py) {
+ objet[i].left=px;
+ objet[i].top=py;
+}
+if (document.getElementById)  {
+   if(navigator.appName.substring(0,3) == "Net")
+      document.captureEvents(Event.MOUSEMOVE);
+   document.onmousemove = Pos_Souris;
+   }
+function Pos_Souris(e) {
+   Xpos = (navigator.appName.substring(0,3) == "Net") ? e.pageX : event.x+document.body.scrollLeft;
+   Ypos = (navigator.appName.substring(0,3) == "Net") ? e.pageY : event.y+document.body.scrollTop;
+   Xpos = Xpos - 10;
+}
+function mouvement() {
+ if (window.innerWidth) { Ecranlargeur = window.innerWidth-70; Ecranhauteur = window.innerHeight-100;}
+ else if (document.documentElement && document.documentElement.clientWidth){
+ Ecranlargeur = document.documentElement.clientWidth-70; Ecranhauteur = document.documentElement.clientHeight-100;
+ } else if (document.body) { Ecranlargeur = document.body.clientWidth-70; Ecranhauteur = document.body.clientHeight-10;}
+ Ecranhauteur = Ecranhauteur + 0;
+ Ecranlargeur = Ecranlargeur + 0;
+//===[ position de la Ruche et des fleurs ]=========//
+  Xruche=(Ecranlargeur/2) ;
+  Yruche=(Ecranhauteur- 120);  
+  coordx[13] = (Xruche-70);
+  coordy[13] = (Yruche-30); 
+  coordx[14] = 2;
+  coordx[15] = (Ecranlargeur/8);
+  coordx[16] = (Ecranlargeur/5);
+  coordx[17] = (Ecranlargeur/3);
+  coordx[18] = (Ecranlargeur/1.5);
+  coordx[19] = (Ecranlargeur/1.3);
+  coordx[20] = (Ecranlargeur/1.16);
+  coordx[21] = (Ecranlargeur-50);
+  coordy[14] = (Yruche+30);
+  coordy[15] = (Yruche+30);
+  coordy[16] = (Yruche+30);
+  coordy[17] = (Yruche+80);
+  coordy[18] = (Yruche+90);
+  coordy[19] = (Yruche+30);
+  coordy[20] = (Yruche+80);
+  coordy[21] = (Yruche+30);
+//===[ init Abeilles dans ruche ]=========//
+if (Liberte == -3) {
+   for (var i = 0; i < 13; i++) {
+	coordy[i] = (Yruche+ mouvy[i]+ 30);
+        coordx[i] = Xruche;	
+   }
+   Liberte=250;
+   coordx[9] = Ecranlargeur-50;
+   coordx[2] = 10;
+}
+//===[ Liberation des Abeilles de la ruche a 300 et reset a 400 ]=========// 
+Liberte=Liberte+1; 
+if (Liberte > 400) Liberte = 0 ;
+  //===if (Liberte < 300) objet[13].visibility="visible"; ==// 
+  //===if (Liberte > 300) objet[13].visibility="hidden"; ==// 
+//===[ début boucle principale par Abeille ]=========//
+for (var i = 0; i < 13; i++) {
+   FlagChoix=0;
+   //===[ stoppe les Abeilles proches de la souris ]=========// 
+   if ( FlagChoix ==0) { 
+      if ( coordy[i] > ( Ypos - 70) ) {
+      if ( coordy[i] < ( Ypos + 70) ) {
+      if ( coordx[i] > ( Xpos - 50) ) {
+      if ( coordx[i] < ( Xpos + 50) ) {
+          FlagChoix=1; 
+          if ( coordy[i] > Ypos ) {     
+              coordy[i] = coordy[i] -11; 
+          }         
+          if ( coordy[i] < Ypos ) {     
+              coordy[i] = coordy[i] +14;
+          }
+          if ( coordx[i] < Xpos ) {     
+              coordx[i] = coordx[i] -16;
+          }
+          if ( coordx[i] > Xpos ) {     
+              coordx[i] = coordx[i] +12;
+          }    
+       }}}}
+   }
+   //===[ stoppe les Abeilles proches de la ruche ]=========// 
+   if ( FlagChoix ==0) { 
+      if ( coordy[i] > ( Yruche - 30) ) {
+      if ( coordy[i] < ( Yruche + 90) ) {
+      if ( coordx[i] > ( Xruche - 40) ) {
+      if ( coordx[i] < ( Xruche + 40) ) {
+          FlagChoix=1;
+          if ( coordx[i] < Xruche ) {     
+             coordx[i] = coordx[i] -16;
+          }
+          if ( coordx[i] > Xruche ) {     
+             coordx[i] = coordx[i] +12;
+          }
+          if (Liberte < 300) { 
+             if ( coordy[i] > Yruche ) {     
+                 coordy[i] = coordy[i] -11; 
+             }         
+             if ( coordy[i] < Yruche) {     
+                 coordy[i] = coordy[i] +14;
+             }
+          }else{
+             coordy[i] = coordy[i] +14;
+          }
+       }}}}
+   }
+
+   //===[ Les Abeilles butinentle bouquet de Roses roses Obj 14 - position 1 ]=========// 
+   if ( FlagChoix ==0) { 
+      if ( coordy[i] > ( (Yruche+40) - 20) ) {
+      if ( coordy[i] < ( (Yruche+40) + 40) ) {
+      if ( coordx[i] > 2) {
+      if ( coordx[i] < 52) {
+          if ( coordx[i] < 20) {     
+             coordx[i] = coordx[i] -1;           
+          }
+          if ( coordx[i] > 20) {     
+             coordx[i] = coordx[i] +1;
+          }
+          if (Liberte < 300) {
+             FlagChoix=1; 
+             coordy[i] = coordy[i] -1;
+          }
+       }}}}
+   }
+
+   //===[ Les Abeilles butinentle tournesol jaune  Obj 15 - position 2 ]=========// 
+   if ( FlagChoix ==0) { 
+      if ( coordy[i] > ( (Yruche+40) - 20) ) {
+      if ( coordy[i] < ( (Yruche+40) + 40) ) {
+      if ( coordx[i] > ( (Ecranlargeur/8) - 20) ) {
+      if ( coordx[i] < ( (Ecranlargeur/8) + 50) ) {
+          if ( coordx[i] < (Ecranlargeur/8) ) {     
+             coordx[i] = coordx[i] -1;           
+          }
+          if ( coordx[i] > (Ecranlargeur/8) ) {     
+             coordx[i] = coordx[i] +1;
+          }
+          if (Liberte < 370) {
+             FlagChoix=1; 
+             coordy[i] = coordy[i] -1;
+          }
+       }}}}
+   }
+
+   //===[ Les Abeilles butinentla Tulipes violettes  Obj 16 - position 3 ]=========// 
+   if ( FlagChoix ==0) { 
+      if ( coordy[i] > ( (Yruche+40) - 20) ) {
+      if ( coordy[i] < ( (Yruche+40) + 40) ) {
+      if ( coordx[i] > ( (Ecranlargeur/5) - 20) ) {
+      if ( coordx[i] < ( (Ecranlargeur/5) + 50) ) {
+          if ( coordx[i] < (Ecranlargeur/5) ) {     
+             coordx[i] = coordx[i] -1;           
+          }
+          if ( coordx[i] > (Ecranlargeur/5) ) {     
+             coordx[i] = coordx[i] +1;
+          }
+          if (Liberte < 380) {
+             FlagChoix=1; 
+             coordy[i] = coordy[i] -1;
+          }
+       }}}}
+   }
+
+   //===[ Les Abeilles butinent les Jonquilles  Obj 17 - position 4 ]=========// 
+   if ( FlagChoix ==0) { 
+      if ( coordy[i] > ( (Yruche+70) - 20) ) {
+      if ( coordy[i] < ( (Yruche+70) + 40) ) {
+      if ( coordx[i] > ( (Ecranlargeur/3) - 20) ) {
+      if ( coordx[i] < ( (Ecranlargeur/3) + 50) ) {
+          if ( coordx[i] < (Ecranlargeur/3) ) {     
+             coordx[i] = coordx[i] -1;           
+          }
+          if ( coordx[i] > (Ecranlargeur/3) ) {     
+             coordx[i] = coordx[i] +1;
+          }
+          if (Liberte < 380) {
+             FlagChoix=1; 
+             coordy[i] = coordy[i] -1;
+          }
+       }}}}
+   }
+
+   //===[ Les Abeilles butinentla Rose Rose Obj 18 - position 5 ]=========// 
+   if ( FlagChoix ==0) { 
+      if ( coordy[i] > ( (Yruche+60) - 10) ) {
+      if ( coordy[i] < ( (Yruche+60) + 40) ) {
+      if ( coordx[i] > ( (Ecranlargeur/1.5) - 30) ) {
+      if ( coordx[i] < ( (Ecranlargeur/1.5) + 40) ) {
+          if ( coordx[i] < (Ecranlargeur/1.5) ) {     
+             coordx[i] = coordx[i] -1;           
+          }
+          if ( coordx[i] > (Ecranlargeur/1.5) ) {     
+             coordx[i] = coordx[i] +1;
+          }
+          if (Liberte < 320) {
+             FlagChoix=1; 
+             coordy[i] = coordy[i] -1;
+          }
+       }}}}
+   }
+
+
+   //===[ Les Abeilles butinent la tulipe jaune Obj 19 - position 6 ]=========// 
+   if ( FlagChoix ==0) { 
+      if ( coordy[i] > ( (Yruche+40) - 10) ) {
+      if ( coordy[i] < ( (Yruche+40) + 30) ) {
+      if ( coordx[i] > ( (Ecranlargeur/1.3) - 20) ) {
+      if ( coordx[i] < ( (Ecranlargeur/1.3) + 50) ) {
+          if ( coordx[i] < (Ecranlargeur/1.3) ) {     
+             coordx[i] = coordx[i] -1;           
+          }
+          if ( coordx[i] > (Ecranlargeur/1.3) ) {     
+             coordx[i] = coordx[i] +1;
+          }
+          if (Liberte < 260) {
+             FlagChoix=1; 
+             coordy[i] = coordy[i] -1;
+          }
+       }}}}
+   }
+
+
+   //===[ Les Abeilles butinent la Rose rouge  Obj 20 -  position 7 ]=========// 
+   if ( FlagChoix ==0) { 
+      if ( coordy[i] > ( (Yruche+70) - 20) ) {
+      if ( coordy[i] < ( (Yruche+70) + 40) ) {
+      if ( coordx[i] > ( (Ecranlargeur/1.16) - 20) ) {
+      if ( coordx[i] < ( (Ecranlargeur/1.16) + 50) ) {
+          if ( coordx[i] < (Ecranlargeur/1.16) ) {     
+             coordx[i] = coordx[i] -1;           
+          }
+          if ( coordx[i] > (Ecranlargeur/1.16) ) {     
+             coordx[i] = coordx[i] +1;
+          }
+          if (Liberte > 50) {
+             FlagChoix=1; 
+             coordy[i] = coordy[i] -1;
+          }
+       }}}}
+   }
+
+   //===[ Les Abeilles butinent  la Rose blance  Obj 21  - position 8 ]=========// 
+   if ( FlagChoix ==0) { 
+      if ( coordy[i] > ( (Yruche+40)-20 ) ) {
+      if ( coordy[i] < ( (Yruche+40)+40 ) ) {
+      if ( coordx[i] > ( (Ecranlargeur-50) - 20 ) ) {
+      if ( coordx[i] < ( (Ecranlargeur-50) + 50 ) ) {
+          if ( coordx[i] < (Ecranlargeur-50) ) {     
+             coordx[i] = coordx[i] -1;           
+          }
+          if ( coordx[i] > (Ecranlargeur-50) ) {     
+             coordx[i] = coordx[i] +1;
+          }
+          if (Liberte < 370) {
+             FlagChoix=1; 
+             coordy[i] = coordy[i] -1;
+          }
+       }}}}
+   }
+
+   //===[ deplacement des Abeilles libres ]=========//
+   if ( FlagChoix ==0) { 
+      coordx[i] = coordx[i] + mouvx[i] ;
+      coordy[i] = coordy[i] + mouvy[i] ;
+   }
+   //===[ mouvement aux limites de l ecran ]==========//    
+   if (coordx[i] > Ecranlargeur) coordx[i] = 11 ;
+   if (coordx[i] < 3 ) coordx[i] = Ecranlargeur ;
+   if (coordy[i] > (Yruche+110) ) mouvy[i] = - mouvy[i]  ;
+   if (coordy[i] < (Yruche-260) ) mouvy[i] = - mouvy[i] ;
+//===[ fin boucle principale des abeilles ]=========//
+}
+ 
+//===[ affichage ]=========//
+for (var i = 0; i < 22; i++) {
+     placeObj(i,coordx[i] ,coordy[i] );
+}
+setTimeout("mouvement()",100)
+}
+if(document.getElementById) window.onload = mouvement;
+</script>
+</head>
+<body style="background-color: rgb(255, 255, 255); background-image: url(Ciel053.jpg);">
+
+<br><br><br> 
+Ici page web qui dans mon cas est de parler de la vie des abeilles des ruches install&eacute;es dans les Batignolles.
+<br><br><br> 
+
+</body>
