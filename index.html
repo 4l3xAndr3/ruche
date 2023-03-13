@@ -445,13 +445,14 @@ if(document.getElementById) window.onload = mouvement;
 Ici page web qui dans mon cas est de parler de la vie des abeilles des ruches install&eacute;es dans les Batignolles.
 <br><br><br> 
 
-<script>
-   // Supprime le masque de fond une fois que la page est chargée
-   window.addEventListener("load", function(){
-      var mask = document.querySelector(".mask");
-      mask.classList.add("hidden");
-      setTimeout(function(){ mask.remove(); }, 600);
-   });
-</script>
+
+      <script>
+      // Supprime le masque de fond une fois que la page est chargée
+      window.addEventListener("load", function(){
+         var mask = document.querySelector(".mask");
+         mask.classList.add("hidden");
+         setTimeout(function(){ mask.remove(); }, 600);
+      });
+      </script>
 </body>
 </html>
